@@ -1,0 +1,29 @@
+# emu8086 — file sinh ra khi compile, không nộp
+*.com_
+*.com_.debug
+*.com_.list
+*.com_.symbol
+*.com_.~asm
+*.~asm
+
+# SDCC — file trung gian. Giữ lại .hex vì đề bắt nộp
+*.rel
+*.lst
+*.map
+*.mem
+*.rst
+*.sym
+*.ihx
+*.lk
+*.asm.bak
+
+# Proteus — workspace riêng của từng máy
+*.pdsprj.*.workspace
+*.pdsbak
+
+# Word / Office mở file thì sinh ra
+~$*
+
+# Windows
+Thumbs.db
+desktop.ini
