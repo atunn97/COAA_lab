@@ -27,3 +27,8 @@
 # Windows
 Thumbs.db
 desktop.ini
+
+# Python — cache va log sinh ra khi chay app giam sat UART
+__pycache__/
+*.pyc
+uart_log.txt

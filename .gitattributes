@@ -1,0 +1,10 @@
+# .cmd phai giu CRLF: file .cmd xuong dong kieu LF lam cmd nhay nham nhan goto
+*.cmd    text eol=crlf
+*.ps1    text eol=crlf
+
+# khong de git doi xuong dong hay tron noi dung
+*.exe    binary
+*.dll    binary
+*.lib    binary
+*.pdsprj binary
+cc1      binary

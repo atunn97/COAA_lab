@@ -18,8 +18,17 @@ Bài nộp hàng tuần. Mỗi tuần một thư mục `TuanNN`.
 ## Môi trường
 
 - **emu8086 4.08rt** — `C:\emu8086`, build ra `C:\emu8086\MyBuild`
-- **SDCC 4.5.0** — biên dịch C sang `.hex` cho 8051
+- **SDCC 4.5.0** — biên dịch C sang `.hex` cho 8051. Bản rút gọn cho 8051 đi kèm repo ở `tools/sdcc`
+  (GPL, giấy phép trong thư mục đó), clone về là dịch được, không cần cài
 - **Proteus** — mô phỏng mạch blink LED
-- **VS Code** — chỉ soạn thảo, không biên dịch được 8051
+- **VS Code** — soạn thảo; mở cả thư mục repo thì **Ctrl+Shift+B** dịch file đang mở ra `.hex`
+
+## Dịch ra `.hex` trên máy bất kỳ
+
+Kéo-thả file `.c` hoặc `.asm` lên **`hex.cmd`** → `.hex` nằm ngay cạnh file gốc.
+Code viết cho Keil (`reg52.h`, `sbit X = P1^0`, `interrupt 1`…) được `keil2sdcc.ps1` tự đổi sang SDCC, file gốc giữ nguyên.
+
+**Mạch Proteus phải nằm cùng thư mục với file `.hex` nó nạp.** Proteus lưu đường dẫn tới hex
+*tương đối* so với file `.pdsprj`; để mạch ở chỗ khác (Documents, Desktop…) thì sang máy khác mạch không tìm thấy hex.
 
 Thạch anh 12 MHz, LED mắc active LOW từ +5V qua trở 330 Ω xuống chân P1.0.

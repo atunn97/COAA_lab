@@ -1,0 +1,27 @@
+{
+  // Ctrl+Shift+B khi dang mo file .c / .asm -> sinh .hex canh file do (goi hex.cmd)
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "8051: dich ra .hex",
+      "type": "process",
+      "command": "cmd.exe",
+      "args": ["/c", "${workspaceFolder}\\hex.cmd", "${file}"],
+      "options": { "env": { "TERM_PROGRAM": "vscode" } },
+      "group": { "kind": "build", "isDefault": true },
+      "presentation": { "reveal": "always", "clear": true },
+      "problemMatcher": {
+        "owner": "sdcc",
+        "fileLocation": ["relative", "${fileDirname}"],
+        "pattern": {
+          "regexp": "^(.*?):(\\d+): (error|warning) (\\d+): (.*)$",
+          "file": 1,
+          "line": 2,
+          "severity": 3,
+          "code": 4,
+          "message": 5
+        }
+      }
+    }
+  ]
+}
