@@ -1,0 +1,21 @@
+    org 0000H
+MAIN: SETB P1.0
+    SETB P1.1
+    SETB P1.2
+    SETB P1.3
+    MOV P0,#79H
+    MOV P2,#00H
+LOOP:
+    JB P1.0,LED2
+    SETB P2.0
+LED2:
+    JB P1.1,LED3
+    CLR P2.0
+LED3:
+    JB P1.2,LED4
+    SETB P2.1
+LED4:
+    JB P1.3,LOOP
+    CLR P2.1
+    SJMP LOOP
+END
