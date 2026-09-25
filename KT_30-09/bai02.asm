@@ -1,0 +1,20 @@
+    ORG 0000H
+MAIN:   MOV A,#00H
+LOOP:
+        MOV P2,A
+        ACALL DELAY500
+        CJNE A,#0FFH,TIEP
+        SJMP MAIN
+TIEP:   SETB C 
+        RLC A 
+        SJMP LOOP
+
+DELAY500:MOV R5,#5   
+DELAY: 
+    MOV R7,#200
+D1: MOV R6,#250
+D2: DJNZ R6,D2
+    DJNZ R7,D1
+DJNZ R5,DELAY
+    RET
+END
